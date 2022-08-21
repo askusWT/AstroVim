@@ -253,17 +253,11 @@ local config = {
         after = { 'telescope.nvim', },
         config = function ()
           require"octo".setup()
-
-          local map = vim.api.nvim_set_keymap
-          map("n", "<leader>fgi", ":Telescope gh issues<cr>", { desc = "Search Github issues" })
-          map("n", "<leader>fgp", ":Telescope gh pull_request<cr>", { desc = "Search Github pull requests" } )
-          map("n", "<leader>fgg", ":Telescope gh gist<cr>", { desc = "Search Github gists" })
         end
       },
 
       -- disable plugins:
       ["akinsho/bufferline.nvim"] = { disable = true },
-      ["akinsho/nvim-toggleterm.lua"] = { disable = true },
       ["goolord/alpha-nvim"] = { disable = true },
       ["nvim-telescope/telescope-fzf-native.nvim"] = { disable = true }, -- fails to build due to missing build tools
       ["declancm/cinnamon.nvim"] = { disable = true }, -- Slow scrolling
