@@ -264,7 +264,7 @@ local config = {
       ["goolord/alpha-nvim"] = { disable = true },
       ["nvim-telescope/telescope-fzf-native.nvim"] = { disable = true }, -- fails to build due to missing build tools
       ["declancm/cinnamon.nvim"] = { disable = true }, -- Slow scrolling
-      ["nvim-treesitter/nvim-treesitter"] = { run = nil },
+      ["nvim-treesitter/nvim-treesitter"] = { run = ':echo "No TSUpdate!"', }
     },
     ["neo-tree"] = {
       event_handlers = {}, -- do not mess with signcolumns!
@@ -300,12 +300,11 @@ local config = {
         },
       },
     },
-    ["treesitter"] = {
-      ensure_installed = {},
-    },
   },
 
   polish = function()
+    vim.opt.runtimepath:append("/home/extra/.local/share/nvim/treesitter") -- treesiter location override!
+
     local map = vim.api.nvim_set_keymap
     local unmap = vim.api.nvim_del_keymap
 
