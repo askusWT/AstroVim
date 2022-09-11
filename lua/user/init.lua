@@ -275,13 +275,25 @@ local config = {
       vale["filetypes"] = { "markdown", "tex", "asciidoc", "html" }
       -- Check supported formatters and linters
       config.sources = {
-        -- Set a formatter
-        null_ls.builtins.formatting.prettier,
-        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.code_actions.shellcheck,
         -- Set a linter
-        vale,
+        null_ls.builtins.diagnostics.actionlint,
         null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.fish,
+        null_ls.builtins.diagnostics.gitlint,
         null_ls.builtins.diagnostics.luacheck,
+        null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.shellcheck,
+        vale,
+        null_ls.builtins.diagnostics.vulture,
+        null_ls.builtins.diagnostics.yamllint,
+        -- Set a formatter
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.jq,
+        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.shellharden,
+        null_ls.builtins.formatting.stylua,
       }
       return config
     end,
